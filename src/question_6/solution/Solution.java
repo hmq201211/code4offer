@@ -1,5 +1,7 @@
 package question_6.solution;
 
+import common.ListNode;
+
 import java.util.Stack;
 
 public class Solution {
@@ -19,14 +21,5 @@ public class Solution {
             }
             return result;
         }
-    }
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
     }
 }
