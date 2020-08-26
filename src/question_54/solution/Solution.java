@@ -3,6 +3,7 @@ package question_54.solution;
 import common.TreeNode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Stack;
 
@@ -13,6 +14,7 @@ public class Solution {
     }
 
     private List<TreeNode> inOrderTraverse(TreeNode root) {
+        List<TreeNode> queue = new LinkedList<>() {{ add(root); }}, tmp;
         List<TreeNode> toReturn = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
