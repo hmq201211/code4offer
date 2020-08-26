@@ -14,7 +14,6 @@ public class Solution {
     }
 
     private List<TreeNode> inOrderTraverse(TreeNode root) {
-        List<TreeNode> queue = new LinkedList<>() {{ add(root); }}, tmp;
         List<TreeNode> toReturn = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
