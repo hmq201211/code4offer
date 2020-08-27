@@ -13,21 +13,21 @@ public class Solution {
         int i = 0;
         int j = 0;
         for (; j < k; j++) {
-            if (deque.isEmpty()) {
-                deque.addLast(nums[j]);
-            } else if (deque.getLast() <= nums[j]) {
-                deque.addLast(nums[j]);
+            while (!deque.isEmpty() && deque.getLast() < nums[j]) {
+                deque.removeLast();
             }
+            deque.addLast(nums[j]);
         }
-        toReturn[i] = deque.getLast();
+        toReturn[i] = deque.getFirst();
         for (; j < nums.length; j++) {
             if (deque.getFirst() == nums[i++]) {
                 deque.removeFirst();
             }
-            if (deque.isEmpty() || nums[j] >= deque.getLast()) {
-                deque.addLast(nums[j]);
+            while (!deque.isEmpty() && deque.getLast() < nums[j]) {
+                deque.removeLast();
             }
-            toReturn[i] = deque.getLast();
+            deque.addLast(nums[j]);
+            toReturn[i] = deque.getFirst();
         }
         return toReturn;
     }
